@@ -167,9 +167,6 @@ opencv:
     macos-port: opencv
     opensuse: opencv-devel
 
-opencv4:
-    gentoo: =media-libs/opencv-4*
-
 jpeg:
     debian,ubuntu: libjpeg-dev
     fedora: libjpeg-turbo-devel
@@ -217,8 +214,7 @@ qtruby:
             - name: qtbindings
               git: https://github.com/rock-core/qtbindings
         osdep: [qt4, qt4-opengl, qt-designer, qt4-webkit, ruby-dev, cmake]
-    gentoo:
-        kde-base/kdebindings-ruby
+    gentoo: nonexistent
 
 fakefs: gem
 flexmock: gem
