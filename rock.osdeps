@@ -131,7 +131,11 @@ gui/osg_qt5:
 
 qt4:
     # QMake is needed for the CMake macro for Qt4
-    debian,ubuntu: [libqt4-dev, qt4-qmake]
+    debian: [libqt4-dev, qt4-qmake]
+    ubuntu:
+        "16.04,18.04": [libqt4-dev, qt4-qmake]
+        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on x86_64
+        default: nonexistent
     gentoo:
         - dev-qt/qtcore:4
         - dev-qt/qtgui:4
@@ -155,7 +159,11 @@ qt5:
     arch,manjarolinux: qt5
 
 qt4-svg:
-    debian,ubuntu: libqt4-dev
+    debian: libqt4-dev
+    ubuntu:
+        "16.04,18.04": libqt4-dev
+        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on x86_64
+        default: nonexistent
     gentoo: nonexistent
     fedora,opensuse: qt-devel
     macos-brew: qt4
@@ -167,7 +175,11 @@ qt5-svg:
     gentoo: dev-qt/qtsvg
 
 qt4-opengl:
-    debian,ubuntu: libqt4-opengl-dev
+    debian: libqt4-opengl-dev
+    ubuntu:
+        "16.04,18.04": libqt4-opengl-dev
+        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on x86_64
+        default: nonexistent
     gentoo: dev-qt/qtopengl:4
     fedora,opensuse: qt-devel
     macos-brew: qt4
@@ -183,7 +195,11 @@ qt5-opengl:
     arch: qt5
 
 qt4-webkit:
-    debian,ubuntu: libqtwebkit-dev
+    debian: libqtwebkit-dev
+    ubuntu:
+        "16.04,18.04": libqtwebkit-dev
+        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on x86_64
+        default: nonexistent
     fedora,opensuse: qt-devel
     macos-brew: qt4
     macos-port: qt4-mac
@@ -195,7 +211,11 @@ qt5-webkit:
     macos-port: qt5-mac
 
 qt-designer:
-    debian,ubuntu: qt4-designer
+    debian: qt4-designer
+    ubuntu:
+        "16.04,18.04": qt4-designer
+        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on x86_64
+        default: nonexistent
     gentoo: dev-qt/designer:4
     fedora,opensuse: qt-devel
     macos-brew: qt4
@@ -265,11 +285,9 @@ qtruby:
     ubuntu:
         "16.04,18.04":
             gem: qtbindings
-        default:
-            gem:
-            - name: qtbindings
-              git: https://github.com/rock-core/qtbindings
-        osdep: [qt4, qt4-opengl, qt-designer, qt4-webkit, ruby-dev, cmake]
+            osdep: [qt4, qt4-opengl, qt-designer, qt4-webkit, ruby-dev, cmake]
+        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on ubuntu 20.04 x86_64
+        default: nonexistent
     gentoo:
         kde-base/kdebindings-ruby
 

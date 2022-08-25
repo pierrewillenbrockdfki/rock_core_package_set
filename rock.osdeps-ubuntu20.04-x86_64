@@ -1,0 +1,29 @@
+
+qt4:
+    # QMake is needed for the CMake macro for Qt4
+    ubuntu:
+        "20.04": [libqt4-dev, qt4-qmake]
+
+qt4-svg:
+    ubuntu:
+        "20.04": libqt4-dev
+
+qt4-opengl:
+    ubuntu:
+        "20.04": libqt4-opengl-dev
+
+qt4-webkit:
+    ubuntu:
+        "20.04": libqtwebkit-dev
+
+qt-designer:
+    ubuntu:
+        "20.04": qt4-designer
+
+qtruby:
+    ubuntu:
+        "20.04":
+            gem:
+            - name: qtbindings
+              git: https://github.com/rock-core/qtbindings
+            osdep: [qt4, qt4-opengl, qt-designer, qt4-webkit, ruby-dev, cmake]

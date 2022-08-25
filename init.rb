@@ -220,3 +220,9 @@ configuration_option('QTVER', 'string',
         "if you want to use qt5 on your qt5 supporting distribution",
         "(Ubuntu 18.04 and later). The qt5 support is not as complete as",
         "the qt4 support, especially lacking any support for gui/vizkit."])
+
+only_on ["ubuntu","20.04"] do
+    if RUBY_PLATFORM.downcase.include?("x86_64")
+        Autoproj.workspace.osdep_suffixes << "ubuntu20.04-x86_64"
+    end
+end
