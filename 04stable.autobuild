@@ -6,9 +6,9 @@ manifest = if Autoproj.respond_to?(:workspace)
 add_packages_to_flavors 'stable' => ['orogen', 'rtt', 'utilmm', 'utilrb', 'typelib', 'rtt_typelib', 'tools/metaruby', 'ocl', 'log4cpp']
 
 in_flavor 'master', 'stable' do
-    if Autoproj.config.get('QTVER') == '4'
+#    if Autoproj.config.get('QTVER') == '4'
         ruby_package 'gui/vizkit'
-    end
+#    end
 
     cmake_package 'gui/vizkit3d' do |pkg|
         # gui/vizkit3d needs to do this in their manifest
