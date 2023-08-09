@@ -23,7 +23,5 @@ qt-designer:
 qtruby:
     ubuntu:
         "20.04":
-            gem:
-            - name: qtbindings
-              git: https://github.com/rock-core/qtbindings
+            gem: rock-qtbindings
             osdep: [qt4, qt4-opengl, qt-designer, qt4-webkit, ruby-dev, cmake]
