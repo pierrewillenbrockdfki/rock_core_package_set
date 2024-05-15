@@ -158,18 +158,6 @@ qt5:
     macos-port: qt5-mac
     arch,manjarolinux: qt5
 
-qt4-svg:
-    debian: libqt4-dev
-    ubuntu:
-        "16.04,18.04": libqt4-dev
-        #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on x86_64
-        default: nonexistent
-    gentoo: nonexistent
-    fedora,opensuse: qt-devel
-    macos-brew: qt4
-    macos-port: qt4-mac
-    arch,manjarolinux: qt4
-
 qt5-svg:
     debian,ubuntu: libqt5svg5-dev
     gentoo: dev-qt/qtsvg
