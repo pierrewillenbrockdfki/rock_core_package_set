@@ -148,11 +148,12 @@ qt5:
     # QMake is needed for the CMake macro for Qt5
     debian: [qt5-default, qttools5-dev]
     ubuntu:
-        '18.04,20.04': [qt5-default, qttools5-dev]
+        '18.04,20.04': [qt5-default, qttools5-dev, libqt5svg5-dev]
         default: [qtbase5-dev, qtbase5-dev-tools, libqt5svg5-dev, qttools5-dev]
     gentoo:
         - dev-qt/qtcore:5
         - dev-qt/qtgui:5
+        - dev-qt/qtsvg:5
     fedora,opensuse: qt-devel
     macos-brew: qt5
     macos-port: qt5-mac
