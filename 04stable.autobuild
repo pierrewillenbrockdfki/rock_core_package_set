@@ -11,12 +11,6 @@ in_flavor 'master', 'stable' do
 #    end
 
     cmake_package 'gui/vizkit3d' do |pkg|
-        # gui/vizkit3d needs to do this in their manifest
-        if Autoproj.config.get('QTVER') == '4'
-            pkg.depends_on "gui/osg_qt4"
-        else
-            pkg.depends_on "gui/osg_qt5"
-        end
         if manifest.package_enabled?('rtt', false) # the toolchain is built, add it to the rtt_target
             pkg.define "OROCOS_TARGET", Autoproj.config.get('rtt_target')
         end
