@@ -205,7 +205,8 @@ qt4-webkit:
     macos-port: qt4-mac
 
 qt5-webkit:
-    debian,ubuntu: libqtwebkit-dev
+    debian,ubuntu:
+        default: libqt5webkit5-dev
     fedora,opensuse: qt-devel
     macos-brew: qt5
     macos-port: qt5-mac
