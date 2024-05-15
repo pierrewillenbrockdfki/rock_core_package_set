@@ -189,7 +189,3 @@ unless Autoproj.config.has_value_for?('syskit_use_bundles')
     Autoproj.config.set 'syskit_use_bundles', true, true
 end
 
-unless Autoproj.config.has_value_for?('QTVER')
-    Autoproj.config.set 'QTVER', '4'
-end
-
