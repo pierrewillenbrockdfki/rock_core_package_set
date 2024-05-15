@@ -149,7 +149,7 @@ qt5:
     debian: [qt5-default, qttools5-dev]
     ubuntu:
         '18.04,20.04': [qt5-default, qttools5-dev]
-        default: [qtbase5-dev, qtbase5-dev-tools, libqt5svg5-dev]
+        default: [qtbase5-dev, qtbase5-dev-tools, libqt5svg5-dev, qttools5-dev]
     gentoo:
         - dev-qt/qtcore:5
         - dev-qt/qtgui:5
