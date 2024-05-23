@@ -141,19 +141,13 @@ qt4:
     arch,manjarolinux: qt4
 
 qt5:
-    # QMake is needed for the CMake macro for Qt5
-    debian: [qt5-default, qttools5-dev]
-    ubuntu:
-        '18.04,20.04': [qt5-default, qttools5-dev, libqt5svg5-dev]
-        default: [qtbase5-dev, qtbase5-dev-tools, libqt5svg5-dev, qttools5-dev]
-    gentoo:
-        - dev-qt/qtcore:5
-        - dev-qt/qtgui:5
-        - dev-qt/qtsvg:5
-    fedora,opensuse: qt-devel
-    macos-brew: qt5
-    macos-port: qt5-mac
-    arch,manjarolinux: qt5
+    debian,ubuntu: [qtbase5-dev, qtbase5-dev-tools, qttools5-dev, libqt5svg5-dev]
+    gentoo: ["dev-qt/qtcore:5", "dev-qt/qtgui:5", "dev-qt/qtsvg:5"]
+    #fedora: [qt5-qtbase-devel, qt5-qtsvg-devel]
+    #opensuse: [libqt5-qtbase, libqt5-qtsvg]
+    #macos-brew: qt5
+    #macos-port: qt5-mac
+    #arch,manjarolinux: qt5
 
 qt4-opengl:
     debian,ubuntu: libqt4-opengl-dev
@@ -178,11 +172,14 @@ qt4-webkit:
     macos-port: qt4-mac
 
 qt5-webkit:
-    debian,ubuntu:
-        default: libqt5webkit5-dev
-    fedora,opensuse: qt-devel
-    macos-brew: qt5
-    macos-port: qt5-mac
+    # Note: qtwebkit has been deprecated by QT.
+    # developers should look into supporting webchannel/webengine/webview
+    debian,ubuntu: libqt5webkit5-dev
+    gentoo: nonexistent
+    #fedora: qt5-qtwebkit-devel
+    #opensuse: libqt5-qtwebkit
+    #macos-brew: qt5
+    #macos-port: qt5-mac
 
 qt-designer:
     debian,ubuntu: qt4-designer
