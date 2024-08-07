@@ -44,7 +44,7 @@ version_control:
       branch: $ROCK_BRANCH
     
     - gui/qtpropertybrowser:
-      github: abhijitkundu/QtPropertyBrowser
+      github: rock-core/gui-QtPropertyBrowser
 
     - gui/osg_qt5:
       github: rock-core/gui-osg_qt4
