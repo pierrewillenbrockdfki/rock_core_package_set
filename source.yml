@@ -42,7 +42,7 @@ version_control:
     - gui/.*:
       github: rock-core/gui-$PACKAGE_BASENAME
       branch: $ROCK_BRANCH
-    
+
     - gui/qtpropertybrowser:
       github: rock-core/gui-QtPropertyBrowser
 

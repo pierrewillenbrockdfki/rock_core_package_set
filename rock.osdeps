@@ -145,19 +145,13 @@ qt4:
     arch,manjarolinux: qt4
 
 qt5:
-    # QMake is needed for the CMake macro for Qt5
-    debian: [qt5-default, qttools5-dev]
-    ubuntu:
-        '18.04,20.04': [qt5-default, qttools5-dev, libqt5svg5-dev]
-        default: [qtbase5-dev, qtbase5-dev-tools, libqt5svg5-dev, qttools5-dev]
-    gentoo:
-        - dev-qt/qtcore:5
-        - dev-qt/qtgui:5
-        - dev-qt/qtsvg:5
-    fedora,opensuse: qt-devel
-    macos-brew: qt5
-    macos-port: qt5-mac
-    arch,manjarolinux: qt5
+    debian,ubuntu: [qtbase5-dev, qtbase5-dev-tools, libqt5svg5-dev, qttools5-dev]
+    gentoo: ["dev-qt/qtcore:5", "dev-qt/qtgui:5", "dev-qt/qtsvg:5"]
+    #fedora: [qt5-qtbase-devel, qt5-qtsvg-devel]
+    #opensuse: [libqt5-qtbase, libqt5-qtsvg]
+    #macos-brew: qt5
+    #macos-port: qt5-mac
+    #arch,manjarolinux: qt5
 
 qt5-svg:
     debian,ubuntu: libqt5svg5-dev
@@ -178,10 +172,11 @@ qt4-opengl:
 qt5-opengl:
     debian,ubuntu: libqt5opengl5-dev
     gentoo: dev-qt/qtopengl:5
-    fedora,opensuse: qt-devel
-    macos-brew: qt5
-    macos-port: qt5-mac
-    arch: qt5
+    #fedora: qt5-qtbase-devel
+    #opensuse: qt5-qtbase
+    #macos-brew: qt5
+    #macos-port: qt5-mac
+    #arch: qt5
 
 qt4-webkit:
     debian: libqtwebkit-dev
@@ -194,11 +189,14 @@ qt4-webkit:
     macos-port: qt4-mac
 
 qt5-webkit:
-    debian,ubuntu:
-        default: libqt5webkit5-dev
-    fedora,opensuse: qt-devel
-    macos-brew: qt5
-    macos-port: qt5-mac
+    # Note: qtwebkit has been deprecated by QT.
+    # developers should look into supporting webchannel/webengine/webview
+    debian,ubuntu: libqt5webkit5-dev
+    gentoo: nonexistent
+    #fedora: qt5-qtwebkit-devel
+    #opensuse: libqt5-qtwebkit
+    #macos-brew: qt5
+    #macos-port: qt5-mac
 
 qt-designer:
     debian: qt4-designer
@@ -214,9 +212,10 @@ qt-designer:
 qt5-designer:
     debian,ubuntu: qttools5-dev-tools
     gentoo: dev-qt/designer:5
-    fedora,opensuse: qt-devel
-    macos-brew: qt5
-    macos-port: qt5-mac
+    #fedora: qt5-qttools-devel
+    #opensuse: libqt5-qttools
+    #macos-brew: qt5
+    #macos-port: qt5-mac
 
 opencv:
     debian: libopencv-dev
@@ -278,6 +277,7 @@ qtruby:
             osdep: [qt4, qt4-opengl, qt-designer, qt4-webkit, ruby-dev, cmake]
         #note: overriden in rock.osdeps-ubuntu20.04-x86_64 if running on ubuntu 20.04 x86_64
         default: nonexistent
+        "24.04": ignore
     gentoo:
         kde-base/kdebindings-ruby
 
@@ -403,3 +403,17 @@ grpc-ruby:
     gem: grpc
 grpc-ruby-tools:
     gem: grpc-tools
+
+valgrind:
+    debian,ubuntu: valgrind
+
+yaml:
+    debian,ubuntu: libyaml-dev
+    gentoo: dev-libs/libyaml
+    fedora,opensuse: libyaml-devel
+    arch,manjarolinux: libyaml
+
+irb:
+  gem: irb
+  osdep:
+    - yaml
