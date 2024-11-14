@@ -189,10 +189,6 @@ unless Autoproj.config.has_value_for?('syskit_use_bundles')
     Autoproj.config.set 'syskit_use_bundles', true, true
 end
 
-unless Autoproj.config.has_value_for?('QTVER')
-    Autoproj.config.set 'QTVER', '4'
-end
-
 only_on ["ubuntu","20.04"] do
     if RUBY_PLATFORM.downcase.include?("x86_64")
         Autoproj.workspace.osdep_suffixes << "ubuntu20.04-x86_64"
