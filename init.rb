@@ -193,12 +193,6 @@ unless Autoproj.config.has_value_for?('QTVER')
     Autoproj.config.set 'QTVER', '4'
 end
 
-only_on ["ubuntu","20.04"] do
-    if RUBY_PLATFORM.downcase.include?("x86_64")
-        Autoproj.workspace.osdep_suffixes << "ubuntu20.04-x86_64"
-    end
-end
-
 # See README
 if (sanitizers = Autoproj.config.get("cxx_sanitizers", nil))
     list = sanitizers.split(",")
